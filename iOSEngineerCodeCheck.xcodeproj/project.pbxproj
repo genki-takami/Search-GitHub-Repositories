@@ -18,6 +18,7 @@
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 		E084606D27BC3E4100BEED99 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084606C27BC3E4100BEED99 /* Repository.swift */; };
 		E084606F27BC41FD00BEED99 /* RepositorySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084606E27BC41FD00BEED99 /* RepositorySearchView.swift */; };
+		E084607127BC47E600BEED99 /* SearchBarTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607027BC47E600BEED99 /* SearchBarTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E084606C27BC3E4100BEED99 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E084606E27BC41FD00BEED99 /* RepositorySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchView.swift; sourceTree = "<group>"; };
+		E084607027BC47E600BEED99 /* SearchBarTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				E084606C27BC3E4100BEED99 /* Repository.swift */,
+				E084607027BC47E600BEED99 /* SearchBarTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
 				E084606F27BC41FD00BEED99 /* RepositorySearchView.swift in Sources */,
 				E084606D27BC3E4100BEED99 /* Repository.swift in Sources */,
+				E084607127BC47E600BEED99 /* SearchBarTask.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);

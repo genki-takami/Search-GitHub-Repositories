@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class RepositorySearchViewController: UIViewController, UISearchBarDelegate {
+final class RepositorySearchViewController: UIViewController {
 
     
-    @IBOutlet private weak var repoTable: UITableView!
+    @IBOutlet weak var repoTable: UITableView!
     @IBOutlet weak var repoSearchBar: UISearchBar!
     
     var repo: [[String: Any]]=[]
@@ -40,37 +40,7 @@ final class RepositorySearchViewController: UIViewController, UISearchBarDelegat
         view.endEditing(true)
     }
     
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        repoSearchBar.text = ""
-        return true
-    }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        word = repoSearchBar.text!
-        
-        if word.count != 0 {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
-                if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                    self.repo = items
-                        DispatchQueue.main.async {
-                            self.repoTable.reloadData()
-                        }
-                    }
-                }
-            }
-        // これ呼ばなきゃリストが更新されません
-        task?.resume()
-        }
-        
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
