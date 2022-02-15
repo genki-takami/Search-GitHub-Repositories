@@ -8,10 +8,10 @@
 
 import UIKit
 
-class RepositorySearchViewController: UITableViewController, UISearchBarDelegate {
+final class RepositorySearchViewController: UIViewController, UISearchBarDelegate {
 
     
-    @IBOutlet weak var repoTable: UITableView!
+    @IBOutlet private weak var repoTable: UITableView!
     @IBOutlet weak var repoSearchBar: UISearchBar!
     
     var repo: [[String: Any]]=[]
@@ -49,7 +49,7 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
                     if let items = obj["items"] as? [[String: Any]] {
                     self.repo = items
                         DispatchQueue.main.async {
-                            self.tableView.reloadData()
+                            self.repoTable.reloadData()
                         }
                     }
                 }
@@ -68,27 +68,4 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
         }
         
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
-        let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
-        cell.tag = indexPath.row
-        return cell
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
-        idx = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
-        
-    }
-    
 }
