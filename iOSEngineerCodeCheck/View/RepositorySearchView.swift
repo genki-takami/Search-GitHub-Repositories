@@ -23,12 +23,11 @@ extension RepositorySearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Repository", for: indexPath)
         
-        let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
-        cell.tag = indexPath.row
+        let repositoryData = repo[indexPath.row]
+        let repositoryName = cell.viewWithTag(1) as! UILabel
+        repositoryName.text = repositoryData["full_name"] as? String ?? ""
         
         return cell
     }
