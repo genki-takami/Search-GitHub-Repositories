@@ -11,10 +11,7 @@ import UIKit
 extension RepositorySearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
-        idx = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
-        
     }
 }
 

@@ -19,8 +19,6 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var repoForksLabel: UILabel!
     @IBOutlet weak var repoIssuesLabel: UILabel!
     
-    var vc1: ViewController!
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         

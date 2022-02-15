@@ -22,22 +22,28 @@ extension RepositorySearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        word = repoSearchBar.text!
+        let baseURL = "https://api.github.com/search/repositories?q="
         
-        if word.count != 0 {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
+        // TODO: - HUDで警告する
+        guard let word = repoSearchBar.text else { return }
+        
+        if word.isEmpty {
+            // TODO: - HUDで警告する
+        } else {
+            let url = baseURL + word
             task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
                 if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
                     if let items = obj["items"] as? [[String: Any]] {
-                    self.repo = items
+                        self.repo = items
                         DispatchQueue.main.async {
                             self.repoTable.reloadData()
                         }
                     }
                 }
             }
-        // これ呼ばなきゃリストが更新されません
-        task?.resume()
+            
+            // これ呼ばなきゃリストが更新されません
+            task?.resume()
         }
     }
 }
