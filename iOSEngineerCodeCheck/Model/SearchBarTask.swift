@@ -24,11 +24,10 @@ extension RepositorySearchViewController: UISearchBarDelegate {
         
         let baseURL = "https://api.github.com/search/repositories?q="
         
-        // TODO: - HUDで警告する
         guard let word = repoSearchBar.text else { return }
         
         if word.isEmpty {
-            // TODO: - HUDで警告する
+            DisplayPop.error("文字が入力されていません！")
         } else {
             let url = baseURL + word
             task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
