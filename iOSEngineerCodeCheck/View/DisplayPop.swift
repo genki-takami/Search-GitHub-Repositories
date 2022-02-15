@@ -13,12 +13,7 @@ final class DisplayPop {
     
     private static var initializing = false
     
-    static func success(_ text: String) {
-        if initializing == false { setting() }
-        SVProgressHUD.showSuccess(withStatus: text)
-    }
-    
-    static func error(_ text: String) {
+   static func error(_ text: String) {
         if initializing == false { setting() }
         SVProgressHUD.showError(withStatus: text)
     }
@@ -26,6 +21,11 @@ final class DisplayPop {
     static func show() {
         if initializing == false { setting() }
         SVProgressHUD.show()
+    }
+    
+    static func dismiss() {
+        if initializing == false { setting() }
+        SVProgressHUD.dismiss()
     }
     
     private static func setting() {

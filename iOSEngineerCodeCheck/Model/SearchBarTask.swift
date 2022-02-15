@@ -16,33 +16,33 @@ extension RepositorySearchViewController: UISearchBarDelegate {
         return true
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let baseURL = "https://api.github.com/search/repositories?q="
-        
+                
         guard let word = repoSearchBar.text else { return }
         
         if word.isEmpty {
             DisplayPop.error("文字が入力されていません！")
         } else {
-            let url = baseURL + word
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
-                if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                        self.repo = items
-                        DispatchQueue.main.async {
-                            self.repoTable.reloadData()
-                        }
+            
+            DisplayPop.show()
+            
+            APIClient.fetchRepositories(word) { result in
+                
+                DispatchQueue.main.async {
+                    DisplayPop.dismiss()
+                }
+                
+                switch result {
+                case .success(let repos):
+                    self.repo = repos
+                    
+                    DispatchQueue.main.async {
+                        self.repoTable.reloadData()
                     }
+                case .failure(let error):
+                    DisplayPop.error(error.localizedDescription)
                 }
             }
-            
-            // これ呼ばなきゃリストが更新されません
-            task?.resume()
         }
     }
 }

@@ -13,8 +13,7 @@ final class RepositorySearchViewController: UIViewController {
     // MARK: - PROPERTY
     @IBOutlet weak var repoTable: UITableView!
     @IBOutlet weak var repoSearchBar: UISearchBar!
-    var repo = [[String: Any]]()
-    var task: URLSessionTask?
+    var repo = [Repository]()
     
     // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {

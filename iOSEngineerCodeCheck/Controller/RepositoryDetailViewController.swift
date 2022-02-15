@@ -18,7 +18,7 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var repoWatchersLabel: UILabel!
     @IBOutlet weak var repoForksLabel: UILabel!
     @IBOutlet weak var repoIssuesLabel: UILabel!
-    var repo: [String: Any]!
+    var repo: Repository!
     
     // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {
