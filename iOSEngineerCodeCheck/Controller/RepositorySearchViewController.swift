@@ -10,18 +10,20 @@ import UIKit
 
 final class RepositorySearchViewController: UIViewController {
 
-    
+    // MARK: - PROPERTY
     @IBOutlet weak var repoTable: UITableView!
     @IBOutlet weak var repoSearchBar: UISearchBar!
     var repo = [[String: Any]]()
     var task: URLSessionTask?
     
+    // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp()
     }
     
+    // MARK: - SET-UP
     private func setUp() {
         // Search Bar
         repoSearchBar.text = "GitHubのリポジトリを検索できるよー"
@@ -35,6 +37,7 @@ final class RepositorySearchViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // MARK: - PREPARE FOR SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Detail" {

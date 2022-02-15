@@ -10,7 +10,7 @@ import UIKit
 
 final class RepositoryDetailViewController: UIViewController {
     
-    
+    // MARK: - PROPERTY
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var repoFullNameLabel: UILabel!
     @IBOutlet weak var repoLanguageLabel: UILabel!
@@ -19,6 +19,7 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var repoForksLabel: UILabel!
     @IBOutlet weak var repoIssuesLabel: UILabel!
     
+    // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +34,7 @@ final class RepositoryDetailViewController: UIViewController {
         
     }
     
+    // MARK: - GET AVATAR IMAGE
     func getImage(){
         
         let repo = vc1.repo[vc1.idx]
