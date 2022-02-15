@@ -24,6 +24,12 @@ final class RepositoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUp()
+    }
+    
+    // MARK: - SET-UP
+    private func setUp() {
+        
         repoFullNameLabel.text = repo["full_name"] as? String
         repoLanguageLabel.text = "Written in \(repo["language"] as? String ?? "")"
         repoStarsLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
