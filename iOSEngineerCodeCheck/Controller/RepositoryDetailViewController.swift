@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  RepositoryDetailViewController.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 史 翔新 on 2020/04/21.
@@ -18,28 +18,24 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var repoWatchersLabel: UILabel!
     @IBOutlet weak var repoForksLabel: UILabel!
     @IBOutlet weak var repoIssuesLabel: UILabel!
+    var repo: [String: Any]!
     
     // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let repo = vc1.repo[vc1.idx]
-        
+        repoFullNameLabel.text = repo["full_name"] as? String
         repoLanguageLabel.text = "Written in \(repo["language"] as? String ?? "")"
         repoStarsLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
         repoWatchersLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
         repoForksLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
         repoIssuesLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
-        getImage()
         
+        getImage()
     }
     
     // MARK: - GET AVATAR IMAGE
-    func getImage(){
-        
-        let repo = vc1.repo[vc1.idx]
-        
-        repoFullNameLabel.text = repo["full_name"] as? String
+    private func getImage() {
         
         if let owner = repo["owner"] as? [String: Any] {
             if let imgURL = owner["avatar_url"] as? String {
@@ -51,7 +47,5 @@ final class RepositoryDetailViewController: UIViewController {
                 }.resume()
             }
         }
-        
     }
-    
 }

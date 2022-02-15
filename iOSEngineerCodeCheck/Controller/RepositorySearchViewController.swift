@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RepositorySearchViewController.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 史 翔新 on 2020/04/20.
@@ -41,7 +41,9 @@ final class RepositorySearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Detail" {
-            //let dtl = segue.destination as! RepositoryDetailViewController
+            let repositoryDetailVC = segue.destination as! RepositoryDetailViewController
+            let index = repoTable.indexPathForSelectedRow!.row
+            repositoryDetailVC.repo = repo[index]
         }
     }
 }
