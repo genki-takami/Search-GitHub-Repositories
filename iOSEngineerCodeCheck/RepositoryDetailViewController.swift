@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+final class RepositoryDetailViewController: UIViewController {
     
     @IBOutlet weak var ImgView: UIImageView!
     
