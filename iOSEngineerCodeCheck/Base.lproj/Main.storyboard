@@ -67,6 +67,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="repoSearchBar" destination="Va8-xT-yXA" id="p7l-ru-ZAX"/>
+                        <outlet property="repoTable" destination="P0M-RO-dUc" id="bWY-Al-554"/>
                         <segue destination="AHY-RL-7mG" kind="show" identifier="Detail" id="S80-kA-Q0E"/>
                     </connections>
                 </viewController>
@@ -151,13 +153,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
-                        <outlet property="FrksLbl" destination="ZMv-4f-X2V" id="i84-sH-c5t"/>
-                        <outlet property="ImgView" destination="Iim-eb-8Ad" id="dmH-tP-ZuI"/>
-                        <outlet property="IsssLbl" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
-                        <outlet property="LangLbl" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
-                        <outlet property="StrsLbl" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
-                        <outlet property="TtlLbl" destination="4q1-pG-WSB" id="UQ0-5D-rWe"/>
-                        <outlet property="WchsLbl" destination="lQC-lo-IqN" id="Drg-Jv-iUh"/>
+                        <outlet property="avatarImageView" destination="Iim-eb-8Ad" id="JOS-aB-guq"/>
+                        <outlet property="repoForksLabel" destination="ZMv-4f-X2V" id="LYr-yx-IpH"/>
+                        <outlet property="repoFullNameLabel" destination="4q1-pG-WSB" id="Pk7-ot-hke"/>
+                        <outlet property="repoIssuesLabel" destination="dzg-K8-h2L" id="XKY-fF-PeR"/>
+                        <outlet property="repoLanguageLabel" destination="s3M-QO-Kom" id="eAv-fi-g7N"/>
+                        <outlet property="repoStarsLabel" destination="0WZ-UA-R8O" id="ABi-38-QEU"/>
+                        <outlet property="repoWatchersLabel" destination="lQC-lo-IqN" id="zMV-pC-wPK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
