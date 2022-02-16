@@ -20,10 +20,10 @@
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 		DBCCDBFC490808C929262AC4 /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE318DCC28014E15AE96C41 /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */; };
 		E084606D27BC3E4100BEED99 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084606C27BC3E4100BEED99 /* Repository.swift */; };
-		E084606F27BC41FD00BEED99 /* RepositorySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084606E27BC41FD00BEED99 /* RepositorySearchView.swift */; };
-		E084607127BC47E600BEED99 /* SearchBarTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607027BC47E600BEED99 /* SearchBarTask.swift */; };
+		E084606F27BC41FD00BEED99 /* RepositorySearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084606E27BC41FD00BEED99 /* RepositorySearchViewController+TableView.swift */; };
+		E084607127BC47E600BEED99 /* RepositorySearchViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607027BC47E600BEED99 /* RepositorySearchViewController+SearchBar.swift */; };
 		E084607327BC635D00BEED99 /* DisplayPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607227BC635D00BEED99 /* DisplayPop.swift */; };
-		E084607527BC669600BEED99 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607427BC669600BEED99 /* API.swift */; };
+		E084607527BC669600BEED99 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607427BC669600BEED99 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +68,10 @@
 		BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E084606C27BC3E4100BEED99 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		E084606E27BC41FD00BEED99 /* RepositorySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchView.swift; sourceTree = "<group>"; };
-		E084607027BC47E600BEED99 /* SearchBarTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTask.swift; sourceTree = "<group>"; };
+		E084606E27BC41FD00BEED99 /* RepositorySearchViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositorySearchViewController+TableView.swift"; sourceTree = "<group>"; };
+		E084607027BC47E600BEED99 /* RepositorySearchViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositorySearchViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		E084607227BC635D00BEED99 /* DisplayPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPop.swift; sourceTree = "<group>"; };
-		E084607427BC669600BEED99 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E084607427BC669600BEED99 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FCE7D5F4DC5E8FC9FAC866AC /* Pods-iOSEngineerCodeCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				E084606C27BC3E4100BEED99 /* Repository.swift */,
-				E084607027BC47E600BEED99 /* SearchBarTask.swift */,
-				E084607427BC669600BEED99 /* API.swift */,
+				E084607427BC669600BEED99 /* APIClient.swift */,
+				E084607727BDC21500BEED99 /* Extension */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,8 +171,8 @@
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
-				E084606E27BC41FD00BEED99 /* RepositorySearchView.swift */,
 				E084607227BC635D00BEED99 /* DisplayPop.swift */,
+				E084607627BDC0E200BEED99 /* Extension */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +185,22 @@
 				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E084607627BDC0E200BEED99 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E084606E27BC41FD00BEED99 /* RepositorySearchViewController+TableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E084607727BDC21500BEED99 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E084607027BC47E600BEED99 /* RepositorySearchViewController+SearchBar.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		EAEE94ED13952ED9AADBE7ED /* Frameworks */ = {
@@ -240,6 +256,7 @@
 				BFD945ED244DC5EB0012785A /* Sources */,
 				BFD945EE244DC5EB0012785A /* Frameworks */,
 				BFD945EF244DC5EB0012785A /* Resources */,
+				F0087E57623DCFF6A1CA57A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,6 +437,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F0087E57623DCFF6A1CA57A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FF343E853C3B9F66F3266AC5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,11 +486,11 @@
 				E084607327BC635D00BEED99 /* DisplayPop.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
-				E084606F27BC41FD00BEED99 /* RepositorySearchView.swift in Sources */,
+				E084606F27BC41FD00BEED99 /* RepositorySearchViewController+TableView.swift in Sources */,
 				E084606D27BC3E4100BEED99 /* Repository.swift in Sources */,
-				E084607127BC47E600BEED99 /* SearchBarTask.swift in Sources */,
+				E084607127BC47E600BEED99 /* RepositorySearchViewController+SearchBar.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
-				E084607527BC669600BEED99 /* API.swift in Sources */,
+				E084607527BC669600BEED99 /* APIClient.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,7 +708,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02C5F122DA4E48F8C71D899C /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
@@ -696,7 +730,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FCE7D5F4DC5E8FC9FAC866AC /* Pods-iOSEngineerCodeCheckTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
@@ -718,7 +752,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 923ED416564E57A0C77FD840 /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
 				INFOPLIST_FILE = iOSEngineerCodeCheckUITests/Info.plist;
@@ -739,7 +773,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F395615209340425D23C84D /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
 				INFOPLIST_FILE = iOSEngineerCodeCheckUITests/Info.plist;

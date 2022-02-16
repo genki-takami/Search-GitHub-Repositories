@@ -13,6 +13,7 @@ target 'iOSEngineerCodeCheck' do
   target 'iOSEngineerCodeCheckTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire','5.4.4'
   end
 
   target 'iOSEngineerCodeCheckUITests' do
