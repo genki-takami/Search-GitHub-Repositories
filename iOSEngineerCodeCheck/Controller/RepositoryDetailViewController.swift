@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 final class RepositoryDetailViewController: UIViewController {
     
@@ -44,14 +45,9 @@ final class RepositoryDetailViewController: UIViewController {
     private func getImage() {
         
         if let imageURL = repo.avatarImageUrl {
-            URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
-                let img = UIImage(data: data!)!
-                DispatchQueue.main.async {
-                    self.avatarImageView.image = img
-                }
-            }.resume()
+            avatarImageView.af.setImage(withURL: imageURL, placeholderImage: UIImage(systemName: "icloud.and.arrow.down"))
         } else {
-            // TODO: - systemImageを追加
+            avatarImageView.image = UIImage(systemName: "questionmark.square.dashed")
         }
     }
 }
