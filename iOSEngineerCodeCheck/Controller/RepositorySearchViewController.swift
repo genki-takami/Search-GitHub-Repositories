@@ -24,10 +24,13 @@ final class RepositorySearchViewController: UIViewController {
     
     // MARK: - SET-UP
     private func setUp() {
-        // Search Bar
-        repoSearchBar.text = "GitHubのリポジトリを検索できるよー"
+        
+        repoTable.delegate = self
+        repoTable.dataSource = self
+        
+        repoSearchBar.placeholder = "GitHubのリポジトリを検索"
         repoSearchBar.delegate = self
-        // Close Keyboard
+        
         let gesture = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(gesture)
     }
