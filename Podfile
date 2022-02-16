@@ -8,6 +8,7 @@ target 'iOSEngineerCodeCheck' do
   # Pods for iOSEngineerCodeCheck
   pod 'SVProgressHUD','2.2.5'
   pod 'Alamofire','5.4.4'
+  pod 'AlamofireImage','4.2.0'
 
   target 'iOSEngineerCodeCheckTests' do
     inherit! :search_paths
