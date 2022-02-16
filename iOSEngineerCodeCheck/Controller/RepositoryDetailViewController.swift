@@ -30,12 +30,12 @@ final class RepositoryDetailViewController: UIViewController {
     // MARK: - SET-UP
     private func setUp() {
         
-        repoFullNameLabel.text = repo["full_name"] as? String
-        repoLanguageLabel.text = "Written in \(repo["language"] as? String ?? "")"
-        repoStarsLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        repoWatchersLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        repoForksLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        repoIssuesLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+        repoFullNameLabel.text = repo.fullName
+        repoLanguageLabel.text = "Written in \(repo.language ?? "使用言語不明")"
+        repoStarsLabel.text = "\(repo.stargazersCount) stars"
+        repoWatchersLabel.text = "\(repo.watchersCount) watchers"
+        repoForksLabel.text = "\(repo.forksCount) forks"
+        repoIssuesLabel.text = "\(repo.openIssuesCount) open issues"
         
         getImage()
     }
@@ -43,15 +43,15 @@ final class RepositoryDetailViewController: UIViewController {
     // MARK: - GET AVATAR IMAGE
     private func getImage() {
         
-        if let owner = repo["owner"] as? [String: Any] {
-            if let imgURL = owner["avatar_url"] as? String {
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
-                    let img = UIImage(data: data!)!
-                    DispatchQueue.main.async {
-                        self.avatarImageView.image = img
-                    }
-                }.resume()
-            }
+        if let imageURL = repo.avatarImageUrl {
+            URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
+                let img = UIImage(data: data!)!
+                DispatchQueue.main.async {
+                    self.avatarImageView.image = img
+                }
+            }.resume()
+        } else {
+            // TODO: - systemImageを追加
         }
     }
 }

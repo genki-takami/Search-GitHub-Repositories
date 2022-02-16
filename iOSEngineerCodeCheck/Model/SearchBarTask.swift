@@ -11,8 +11,9 @@ import UIKit
 extension RepositorySearchViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // 入力する際にテキストを空にする
+        // 入力する際にテキストとリポジトリの配列を空にする
         repoSearchBar.text = ""
+        repo.removeAll()
         return true
     }
     

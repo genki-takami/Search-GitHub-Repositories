@@ -27,7 +27,7 @@ extension RepositorySearchViewController: UITableViewDataSource {
         
         let repositoryData = repo[indexPath.row]
         let repositoryName = cell.viewWithTag(1) as! UILabel
-        repositoryName.text = repositoryData["full_name"] as? String ?? ""
+        repositoryName.text = repositoryData.fullName
         
         return cell
     }
