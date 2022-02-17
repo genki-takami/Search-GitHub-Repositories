@@ -26,6 +26,7 @@ final class RepositorySearchViewController: UIViewController {
         
         repoTable.delegate = self
         repoTable.dataSource = self
+        repoTable.separatorInset = .zero
         
         repoSearchBar.placeholder = "GitHubのリポジトリを検索"
         repoSearchBar.delegate = self

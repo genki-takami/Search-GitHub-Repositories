@@ -28,6 +28,8 @@ extension RepositorySearchViewController: UITableViewDataSource {
     /// リポジトリの名前を記したセル
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        tableView.rowHeight = 50
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Repository", for: indexPath)
         
         let repositoryData = repo[indexPath.row]
