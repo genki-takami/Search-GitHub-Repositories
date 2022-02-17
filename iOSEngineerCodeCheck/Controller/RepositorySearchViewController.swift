@@ -42,10 +42,11 @@ final class RepositorySearchViewController: UIViewController {
     // MARK: - PREPARE FOR SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "Detail" {
+        if segue.identifier == "DetailSegue" {
             let repositoryDetailVC = segue.destination as! RepositoryDetailViewController
-            let index = repoTable.indexPathForSelectedRow!.row
-            repositoryDetailVC.repo = repo[index]
+            /// 引数senderはタップされたセルのindexPath
+            let indexPath = sender as! IndexPath
+            repositoryDetailVC.repo = repo[indexPath.row]
         }
     }
 }
@@ -60,13 +61,15 @@ extension RepositorySearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-                
+        
         guard let word = repoSearchBar.text else { return }
         
         if word.isEmpty {
             Modal.showError("文字が入力されていません！")
         } else {
             
+            /// キーボードを閉じてモーダルを開始し、ユーザが誤タッチするのを防ぐ
+            view.endEditing(true)
             Modal.showModal()
             
             APIClient.fetchRepositories(word) { result in

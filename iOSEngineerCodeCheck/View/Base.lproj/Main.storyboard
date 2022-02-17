@@ -69,7 +69,7 @@
                     <connections>
                         <outlet property="repoSearchBar" destination="Va8-xT-yXA" id="p7l-ru-ZAX"/>
                         <outlet property="repoTable" destination="P0M-RO-dUc" id="bWY-Al-554"/>
-                        <segue destination="AHY-RL-7mG" kind="show" identifier="Detail" id="S80-kA-Q0E"/>
+                        <segue destination="AHY-RL-7mG" kind="show" identifier="DetailSegue" id="7lL-xu-1md"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vx3-kA-tq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

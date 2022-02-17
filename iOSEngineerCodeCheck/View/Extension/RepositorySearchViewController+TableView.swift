@@ -11,8 +11,9 @@ import UIKit
 extension RepositorySearchViewController: UITableViewDelegate {
     
     /// レポジトリーのリストのセルがタップされた時
+    /// indexPathプロパティをprepareメソッドに渡す
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Detail", sender: self)
+        performSegue(withIdentifier: "DetailSegue", sender: indexPath)
     }
 }
 
@@ -32,6 +33,22 @@ extension RepositorySearchViewController: UITableViewDataSource {
         let repositoryName = cell.viewWithTag(1) as! UILabel
         repositoryName.text = repositoryData.fullName
         
+        /// 任意のセルのindexPathを挿入
+        let tapGesture = MyTapGestureRecognizer(target:self, action:#selector(goToDetail(sender:)))
+        tapGesture.indexValue = indexPath
+        cell.addGestureRecognizer(tapGesture)
+        
         return cell
     }
+    
+    /// セルをタップした時に実行し、senderにはMyTapGestureRecognizerのプロパティのindexValueがある
+    @objc func goToDetail(sender: MyTapGestureRecognizer) {
+        tableView(repoTable, didSelectRowAt: sender.indexValue!)
+    }
+}
+
+// MARK: - タップしたらインデックスを返す処理(tableViewのセルで使用)
+final class MyTapGestureRecognizer: UITapGestureRecognizer {
+    
+    var indexValue: IndexPath?
 }
