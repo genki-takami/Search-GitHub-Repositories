@@ -148,17 +148,41 @@
                                     <constraint firstAttribute="bottom" secondItem="oOe-O2-3RS" secondAttribute="bottom" constant="10" id="nhj-uI-hoF"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本語にする" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-z8-CYk">
+                                <rect key="frame" x="20" y="67.5" width="104" height="20.5"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ham-xl-6mH" appends="YES" id="c3a-wb-yAb"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZI-0U-3Jw">
+                                <rect key="frame" x="354.5" y="67.5" width="39.5" height="20.5"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0UT-X0-45R" appends="YES" id="Wvw-nL-Ujd"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="srK-fe-i1b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gWL-IH-i3D" firstAttribute="leading" secondItem="Iim-eb-8Ad" secondAttribute="leading" id="0NG-I1-MdQ"/>
+                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="top" secondItem="RZI-0U-3Jw" secondAttribute="bottom" constant="8" id="2AS-2Q-Opt"/>
                             <constraint firstItem="gWL-IH-i3D" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" id="Ag5-ii-vRF"/>
                             <constraint firstItem="gWL-IH-i3D" firstAttribute="bottom" secondItem="srK-fe-i1b" secondAttribute="bottom" id="E6H-TI-FyU"/>
                             <constraint firstItem="Iim-eb-8Ad" firstAttribute="leading" secondItem="srK-fe-i1b" secondAttribute="leading" constant="20" id="EMR-2C-CyU"/>
                             <constraint firstItem="4q1-pG-WSB" firstAttribute="top" secondItem="Iim-eb-8Ad" secondAttribute="bottom" constant="28" id="G2L-KM-330"/>
                             <constraint firstItem="srK-fe-i1b" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" constant="20" id="IgU-EN-fM3"/>
+                            <constraint firstItem="RZI-0U-3Jw" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" id="W0o-dQ-fSa"/>
                             <constraint firstItem="4q1-pG-WSB" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" id="cSe-zR-hlY"/>
+                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="leading" secondItem="BsQ-z8-CYk" secondAttribute="leading" id="fjl-oS-HM8"/>
+                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="top" secondItem="BsQ-z8-CYk" secondAttribute="bottom" constant="8" id="hl5-it-qGY"/>
                             <constraint firstItem="4q1-pG-WSB" firstAttribute="leading" secondItem="Iim-eb-8Ad" secondAttribute="leading" id="jHn-8t-9ZF"/>
                             <constraint firstItem="Iim-eb-8Ad" firstAttribute="centerY" secondItem="srK-fe-i1b" secondAttribute="centerY" multiplier="0.7" id="ruB-l0-4VM"/>
                             <constraint firstItem="gWL-IH-i3D" firstAttribute="top" secondItem="4q1-pG-WSB" secondAttribute="bottom" constant="8" id="wp7-ad-n9c"/>
@@ -167,16 +191,28 @@
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
                         <outlet property="avatarImageView" destination="Iim-eb-8Ad" id="JOS-aB-guq"/>
+                        <outlet property="languageChangeLabel" destination="BsQ-z8-CYk" id="2k8-g9-WK0"/>
                         <outlet property="repoForksLabel" destination="ZMv-4f-X2V" id="LYr-yx-IpH"/>
                         <outlet property="repoFullNameLabel" destination="4q1-pG-WSB" id="Pk7-ot-hke"/>
                         <outlet property="repoIssuesLabel" destination="dzg-K8-h2L" id="XKY-fF-PeR"/>
                         <outlet property="repoLanguageLabel" destination="s3M-QO-Kom" id="eAv-fi-g7N"/>
                         <outlet property="repoStarsLabel" destination="0WZ-UA-R8O" id="ABi-38-QEU"/>
                         <outlet property="repoWatchersLabel" destination="lQC-lo-IqN" id="zMV-pC-wPK"/>
+                        <outlet property="showMoreInfoLabel" destination="RZI-0U-3Jw" id="RAt-kw-H3d"/>
                         <outlet property="stackPocketView" destination="gWL-IH-i3D" id="6lI-YT-Sof"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ham-xl-6mH">
+                    <connections>
+                        <action selector="changeLanguage:" destination="AHY-RL-7mG" id="s6M-ho-JA4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="0UT-X0-45R">
+                    <connections>
+                        <action selector="showMoreInfo:" destination="AHY-RL-7mG" id="geF-aA-3S0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-265.21739130434787" y="136.60714285714286"/>
         </scene>
@@ -188,8 +224,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -12,57 +12,52 @@ import AlamofireImage
 final class RepositoryDetailViewController: UIViewController {
     
     // MARK: - PROPERTY
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet weak var repoFullNameLabel: UILabel!
     @IBOutlet weak var repoLanguageLabel: UILabel!
     @IBOutlet weak var repoStarsLabel: UILabel!
     @IBOutlet weak var repoWatchersLabel: UILabel!
     @IBOutlet weak var repoForksLabel: UILabel!
     @IBOutlet weak var repoIssuesLabel: UILabel!
-    @IBOutlet weak var stackPocketView: UIView!
+    @IBOutlet private weak var stackPocketView: UIView!
+    @IBOutlet weak var languageChangeLabel: UILabel!
+    @IBOutlet weak var showMoreInfoLabel: UILabel!
     var repo: Repository!
+    var isEnglish = true
     
     // MARK: - VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpLabelAndImage()
-    }
-    
-    // MARK: - SET-UP
-    private func setUpLabelAndImage() {
-        
-        repoFullNameLabel.text = repo.fullName
-        repoLanguageLabel.text = "Written in \(repo.language ?? "使用言語不明")"
-        repoStarsLabel.text = "\(repo.stargazersCount) stars"
-        repoWatchersLabel.text = "\(repo.watchersCount) watchers"
-        repoForksLabel.text = "\(repo.forksCount) forks"
-        repoIssuesLabel.text = "\(repo.openIssuesCount) open issues"
+        /// stackPocketViewの角を丸くしてUILabelをセットし、ダークモードに対応のち画像を挿入
         stackPocketView.layer.cornerRadius = 10
-        
+        setUpLabel(inJapanses: false)
         setTextColor()
         getImage()
     }
     
-    // MARK: - DYNAMICALLY CHANGE TEXT COLOR
-    private func setTextColor() {
-        /// 端末がダークモードであった場合、テキストを白色にする
-        let textColor = UIColor.dynamicTextColor
-        repoFullNameLabel.textColor = textColor
-        repoLanguageLabel.textColor = textColor
-        repoStarsLabel.textColor = textColor
-        repoWatchersLabel.textColor = textColor
-        repoForksLabel.textColor = textColor
-        repoIssuesLabel.textColor = textColor
-    }
-    
-    // MARK: - GET AVATAR IMAGE
     private func getImage() {
-        
         if let imageURL = repo.avatarImageUrl {
             avatarImageView.af.setImage(withURL: imageURL, placeholderImage: UIImage(systemName: "icloud.and.arrow.down"))
         } else {
             avatarImageView.image = UIImage(systemName: "questionmark.square.dashed")
         }
+    }
+    
+    // MARK: - CHANGE TEXT LANGUAGE
+    @IBAction private func changeLanguage(_ sender: Any) {
+        
+        if isEnglish {
+            setUpLabel(inJapanses: true)
+            isEnglish = false
+        } else {
+            setUpLabel(inJapanses: false)
+            isEnglish = true
+        }
+    }
+    
+    // MARK: - SHOW MORE INFORMATION
+    @IBAction private func showMoreInfo(_ sender: Any) {
+        
     }
 }
