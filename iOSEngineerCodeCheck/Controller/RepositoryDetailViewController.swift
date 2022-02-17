@@ -37,6 +37,7 @@ final class RepositoryDetailViewController: UIViewController {
     }
     
     private func getImage() {
+        
         if let imageURL = repo.avatarImageUrl {
             avatarImageView.af.setImage(withURL: imageURL, placeholderImage: UIImage(systemName: "icloud.and.arrow.down"))
         } else {

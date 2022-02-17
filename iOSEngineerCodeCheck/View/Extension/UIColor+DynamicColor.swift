@@ -10,6 +10,10 @@ import UIKit
 
 extension UIColor {
     
+    /// - Parameters:
+    ///   - light:     text color is always black
+    ///   - dark:      text color is always white
+    /// - Returns:     Text color that depends on dark mode
     public class func dynamicColor(light: UIColor, dark: UIColor) -> UIColor {
         /// iOS13移行であればダークモードかどうかで色を変える
         if #available(iOS 13, *) {

@@ -13,6 +13,7 @@ extension RepositoryDetailViewController {
     /// 日本語と英語の２つのバージョン
     func setUpLabel(inJapanses: Bool) {
         
+        /// unitは「単位」という意味
         var unitL, unitS, unitW, unitF, unitI, unitC, unitM: String
         
         if inJapanses {

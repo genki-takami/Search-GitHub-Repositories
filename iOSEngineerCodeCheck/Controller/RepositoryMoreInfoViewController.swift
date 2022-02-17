@@ -25,6 +25,7 @@ final class RepositoryMoreInfoViewController: UIViewController {
         super.viewDidLoad()
         
         var reposite, repoOwner: String
+        
         if isEnglish {
             reposite = "Check Repository @ GitHub"
             repoOwner = "Check Repository Owner"
@@ -32,6 +33,7 @@ final class RepositoryMoreInfoViewController: UIViewController {
             reposite = "リポジトリを閲覧する"
             repoOwner = "主のプロフィールを閲覧する"
         }
+        
         repoSiteLabel.text = reposite
         repoOwnerLabel.text = repoOwner
         descriptionLabel.text = repoDescription
