@@ -38,7 +38,20 @@ final class RepositoryDetailViewController: UIViewController {
         repoForksLabel.text = "\(repo.forksCount) forks"
         repoIssuesLabel.text = "\(repo.openIssuesCount) open issues"
         
+        setTextColor()
         getImage()
+    }
+    
+    // MARK: - DYNAMICALLY CHANGE TEXT COLOR
+    private func setTextColor() {
+        /// 端末がダークモードであった場合、テキストを白色にする
+        let textColor = UIColor.dynamicTextColor
+        repoFullNameLabel.textColor = textColor
+        repoLanguageLabel.textColor = textColor
+        repoStarsLabel.textColor = textColor
+        repoWatchersLabel.textColor = textColor
+        repoForksLabel.textColor = textColor
+        repoIssuesLabel.textColor = textColor
     }
     
     // MARK: - GET AVATAR IMAGE

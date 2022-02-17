@@ -32,6 +32,7 @@ extension RepositorySearchViewController: UITableViewDataSource {
         let repositoryData = repo[indexPath.row]
         let repositoryName = cell.viewWithTag(1) as! UILabel
         repositoryName.text = repositoryData.fullName
+        repositoryName.textColor = UIColor.dynamicTextColor
         
         /// 任意のセルのindexPathを挿入
         let tapGesture = MyTapGestureRecognizer(target:self, action:#selector(goToDetail(sender:)))
