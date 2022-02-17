@@ -30,13 +30,8 @@ final class RepositorySearchViewController: UIViewController {
         repoSearchBar.placeholder = "GitHubのリポジトリを検索"
         repoSearchBar.delegate = self
         
-        /// ソフトウェアキーボードの外をタップしたら、それを閉じる
-        let gesture = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
-        view.addGestureRecognizer(gesture)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
+        /// キーボードを閉じるためのボタンを設置
+        setKeyboardDropdownButton()
     }
     
     // MARK: - PREPARE FOR SEGUE
@@ -51,12 +46,12 @@ final class RepositorySearchViewController: UIViewController {
     }
 }
 
+// MARK: - SEARCHBAR TASK
 extension RepositorySearchViewController: UISearchBarDelegate {
     
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        /// 入力する際にテキストとリポジトリの配列を空にする
+   func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        /// 入力する際にテキストを空にする
         repoSearchBar.text = ""
-        repo.removeAll()
         return true
     }
     
@@ -76,16 +71,17 @@ extension RepositorySearchViewController: UISearchBarDelegate {
                 
                 switch result {
                 case .success(let repos):
+                    self.repo.removeAll()
                     /// 検索に引っ掛からなかったら、その旨を伝える
                     if repos.isEmpty {
                         Modal.showError("「\(word)」を含むリポジトリは見つかりませんでした！")
                     } else {
                         self.repo = repos
-                        /// モーダルを終了してtableViewを更新
-                        DispatchQueue.main.async {
-                            Modal.dismissModal()
-                            self.repoTable.reloadData()
-                        }
+                        Modal.dismissModal()
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.repoTable.reloadData()
                     }
                 case .failure(let error):
                     Modal.showError(error.localizedDescription)

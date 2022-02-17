@@ -10,9 +10,10 @@ import UIKit
 
 extension RepositorySearchViewController: UITableViewDelegate {
     
-    /// レポジトリーのリストのセルがタップされた時
+    /// レポジトリーのリストのセルがタップされた時、キーボードが開いていたら閉じる
     /// indexPathプロパティをprepareメソッドに渡す
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
         performSegue(withIdentifier: "DetailSegue", sender: indexPath)
     }
 }

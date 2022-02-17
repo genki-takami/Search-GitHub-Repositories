@@ -24,6 +24,7 @@
 		E084607327BC635D00BEED99 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607227BC635D00BEED99 /* Modal.swift */; };
 		E084607527BC669600BEED99 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084607427BC669600BEED99 /* APIClient.swift */; };
 		E08460B527BEA6F600BEED99 /* UIColor+DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460B427BEA6F600BEED99 /* UIColor+DynamicColor.swift */; };
+		E08460B727BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460B627BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		E084607227BC635D00BEED99 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		E084607427BC669600BEED99 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E08460B427BEA6F600BEED99 /* UIColor+DynamicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+DynamicColor.swift"; sourceTree = "<group>"; };
+		E08460B627BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositorySearchViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
 		FCE7D5F4DC5E8FC9FAC866AC /* Pods-iOSEngineerCodeCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 			children = (
 				E084606E27BC41FD00BEED99 /* RepositorySearchViewController+TableView.swift */,
 				E08460B427BEA6F600BEED99 /* UIColor+DynamicColor.swift */,
+				E08460B627BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08460B727BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift in Sources */,
 				E084607327BC635D00BEED99 /* Modal.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
