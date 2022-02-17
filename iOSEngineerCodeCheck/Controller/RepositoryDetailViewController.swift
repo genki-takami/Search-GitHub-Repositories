@@ -19,6 +19,7 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var repoWatchersLabel: UILabel!
     @IBOutlet weak var repoForksLabel: UILabel!
     @IBOutlet weak var repoIssuesLabel: UILabel!
+    @IBOutlet weak var stackPocketView: UIView!
     var repo: Repository!
     
     // MARK: - VIEWDIDLOAD
@@ -37,6 +38,7 @@ final class RepositoryDetailViewController: UIViewController {
         repoWatchersLabel.text = "\(repo.watchersCount) watchers"
         repoForksLabel.text = "\(repo.forksCount) forks"
         repoIssuesLabel.text = "\(repo.openIssuesCount) open issues"
+        stackPocketView.layer.cornerRadius = 10
         
         setTextColor()
         getImage()
