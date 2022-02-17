@@ -14,29 +14,31 @@ final class Modal {
     
     private static var initializing = false
     
+    /// - Parameters:
+    ///   - text:     The string who want to display in the error modal
     static func showError(_ text: String) {
         if initializing == false {
-            setting()
+            setUpSVProgressHUD()
         }
         SVProgressHUD.showError(withStatus: text)
     }
     
     static func showModal() {
         if initializing == false {
-            setting()
+            setUpSVProgressHUD()
         }
         SVProgressHUD.show()
     }
     
     static func dismissModal() {
         if initializing == false {
-            setting()
+            setUpSVProgressHUD()
         }
         SVProgressHUD.dismiss()
     }
     
-    /// SVProgressHUDのセットアップ
-    private static func setting() {
+    private static func setUpSVProgressHUD() {
+        /// モーダルの外側を黒色、表示時間を１秒
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.setMinimumDismissTimeInterval(1)
         initializing = true

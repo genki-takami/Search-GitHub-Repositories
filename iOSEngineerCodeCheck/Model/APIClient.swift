@@ -26,6 +26,8 @@ final class APIClient {
         }
     }
     
+    /// - Parameters:
+    ///   - word:     The string entered in the search bar, Not empty string, Not nil
     static func fetchRepositories(_ word: String, handler: @escaping ResultHandler<[Repository]>) {
         
         let baseURL = "https://api.github.com/search/repositories?q="
@@ -37,11 +39,13 @@ final class APIClient {
         }
         
         AF.request(urlString).responseJSON() { response in
+            /// response.data : __NSDictionaryⅠ
             guard let data = response.data else {
                 handler(.failure(APIError.invalidResponse))
                 return
             }
             do {
+                /// スネークケースのキーをコンバートしてデコード
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let repositries: Repositories = try decoder.decode(Repositories.self, from: data)
