@@ -19,31 +19,32 @@ class iOSEngineerCodeCheckTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
     func testAPI_responseJSON() throws {
 
-        let expect = expectation(description: "あらもファイアーーーーーー")
+        let expect = expectation(description: "あらもファイアーーーーーー、、、これは成功します！")
 
         let baseURL = "https://api.github.com/search/repositories?q="
         let urlString = baseURL + "Alamofire"
 
         AF.request(urlString).responseJSON() { response in
 
-            switch response.result {
-            case .success(let data):
-                let repositries: Repositories = try! JSONDecoder().decode(Repositories.self, from: obj)
-                //print(repositries.items)
-                //expect.fulfill()
-            case .failure(_):
-                print("失敗")
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let repositries: Repositories = try decoder.decode(Repositories.self, from: response.data!)
+                print(repositries.items)
+                
+                expect.fulfill()
+            } catch {
+                XCTFail(error.localizedDescription)
+                expect.fulfill()
             }
         }
-        waitForExpectations(timeout: 5) { error in
+        
+        waitForExpectations(timeout: 10) { error in
             if let _ = error {
                 XCTFail("ターーーーーーーーーーイム！！！")
             } else {
@@ -53,7 +54,8 @@ class iOSEngineerCodeCheckTests: XCTestCase {
     }
 
     func testAPI_responseDecodable() throws {
-        let expect = expectation(description: "あらもファイアーーーーーー2")
+        // MARK: - 危険！！！！
+        let expect = expectation(description: "これは失敗します")
 
         let baseURL = "https://api.github.com/search/repositories?q="
         let urlString = baseURL + "swift"
@@ -72,6 +74,7 @@ class iOSEngineerCodeCheckTests: XCTestCase {
                 XCTFail(error.localizedDescription)
             }
         }
+        
         waitForExpectations(timeout: 5) { error in
             if let _ = error {
                 XCTFail("ターーーーーーーーーーイム！！！")
@@ -104,13 +107,6 @@ class iOSEngineerCodeCheckTests: XCTestCase {
             } else {
                 print("完了")
             }
-        }
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
         }
     }
 }
