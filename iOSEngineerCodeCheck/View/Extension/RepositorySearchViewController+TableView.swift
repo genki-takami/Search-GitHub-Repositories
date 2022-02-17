@@ -10,6 +10,7 @@ import UIKit
 
 extension RepositorySearchViewController: UITableViewDelegate {
     
+    /// レポジトリーのリストのセルがタップされた時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "Detail", sender: self)
     }
@@ -17,10 +18,12 @@ extension RepositorySearchViewController: UITableViewDelegate {
 
 extension RepositorySearchViewController: UITableViewDataSource {
     
+    /// リポジトリーの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repo.count
     }
     
+    /// リポジトリの名前を記したセル
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Repository", for: indexPath)
