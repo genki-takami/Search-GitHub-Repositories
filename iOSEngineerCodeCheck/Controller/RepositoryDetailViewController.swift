@@ -25,11 +25,11 @@ final class RepositoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUp()
+        setUpLabelAndImage()
     }
     
     // MARK: - SET-UP
-    private func setUp() {
+    private func setUpLabelAndImage() {
         
         repoFullNameLabel.text = repo.fullName
         repoLanguageLabel.text = "Written in \(repo.language ?? "使用言語不明")"

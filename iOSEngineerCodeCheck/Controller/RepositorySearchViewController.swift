@@ -31,6 +31,7 @@ final class RepositorySearchViewController: UIViewController {
         repoSearchBar.placeholder = "GitHubのリポジトリを検索"
         repoSearchBar.delegate = self
         
+        /// add TapGesture for closing software keyboard
         let gesture = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(gesture)
     }
