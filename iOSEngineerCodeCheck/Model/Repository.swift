@@ -22,9 +22,14 @@ struct Repository: Codable {
     let watchersCount: Int
     let forksCount: Int
     let openIssuesCount: Int
+    let htmlUrl: String
+    let description: String
 
     let owner: Owner
 
+    var ownerHTML: String {
+        return owner.htmlUrl
+    }
     var avatarImageUrl: URL? {
         return URL(string: owner.avatarUrl)
     }
@@ -33,4 +38,5 @@ struct Repository: Codable {
 /// アバター画像があるリポジトリのオーナーデータ(JSONでネストされていた)
 struct Owner: Codable {
     let avatarUrl: String
+    let htmlUrl: String
 }

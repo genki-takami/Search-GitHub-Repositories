@@ -29,14 +29,13 @@ class iOSEngineerCodeCheckTests: XCTestCase {
 
         AF.request(urlString).responseJSON() { response in
 
-            
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
+
                 let repositries: Repositories = try decoder.decode(Repositories.self, from: response.data!)
                 print(repositries.items)
-                
+
                 expect.fulfill()
             } catch {
                 XCTFail(error.localizedDescription)
@@ -44,7 +43,7 @@ class iOSEngineerCodeCheckTests: XCTestCase {
             }
         }
         
-        waitForExpectations(timeout: 10) { error in
+        waitForExpectations(timeout: 5) { error in
             if let _ = error {
                 XCTFail("ターーーーーーーーーーイム！！！")
             } else {

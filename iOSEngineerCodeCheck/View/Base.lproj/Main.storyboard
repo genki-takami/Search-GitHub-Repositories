@@ -216,10 +216,80 @@
             </objects>
             <point key="canvasLocation" x="-265.21739130434787" y="136.60714285714286"/>
         </scene>
+        <!--Repository More Info View Controller-->
+        <scene sceneID="ptJ-Rx-cYM">
+            <objects>
+                <viewController storyboardIdentifier="repositoryMoreInfo" id="Rss-0R-b3g" customClass="RepositoryMoreInfoViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oY3-R8-5r2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Repository @ GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPu-AS-OTn">
+                                <rect key="frame" x="84.5" y="382" width="245" height="24"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v4V-vJ-rvT" appends="YES" id="c6s-Ds-uiE"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Repository Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flA-dg-NSC">
+                                <rect key="frame" x="98" y="436" width="218" height="24"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fY3-Hg-L4t" appends="YES" id="47L-45-Tfe"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4R-bH-gZg">
+                                <rect key="frame" x="20" y="490" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IG2-4j-xxN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u4R-bH-gZg" firstAttribute="top" secondItem="flA-dg-NSC" secondAttribute="bottom" constant="30" id="EX9-6Y-8Vo"/>
+                            <constraint firstItem="flA-dg-NSC" firstAttribute="centerY" secondItem="oY3-R8-5r2" secondAttribute="centerY" id="chb-J5-00z"/>
+                            <constraint firstItem="flA-dg-NSC" firstAttribute="centerX" secondItem="oY3-R8-5r2" secondAttribute="centerX" id="eSJ-n5-Wxn"/>
+                            <constraint firstItem="VPu-AS-OTn" firstAttribute="centerX" secondItem="oY3-R8-5r2" secondAttribute="centerX" id="ez6-Va-e8V"/>
+                            <constraint firstItem="IG2-4j-xxN" firstAttribute="trailing" secondItem="u4R-bH-gZg" secondAttribute="trailing" constant="20" id="mCo-dq-7zF"/>
+                            <constraint firstItem="u4R-bH-gZg" firstAttribute="leading" secondItem="IG2-4j-xxN" secondAttribute="leading" constant="20" id="rNd-qP-D4d"/>
+                            <constraint firstItem="flA-dg-NSC" firstAttribute="top" secondItem="VPu-AS-OTn" secondAttribute="bottom" constant="30" id="zff-UY-aJS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="u4R-bH-gZg" id="MSl-lh-yOg"/>
+                        <outlet property="repoOwnerLabel" destination="flA-dg-NSC" id="kW8-ey-iy2"/>
+                        <outlet property="repoSiteLabel" destination="VPu-AS-OTn" id="EwV-sq-Agb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xX8-Fl-CYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v4V-vJ-rvT">
+                    <connections>
+                        <action selector="goRepositoryWebsite:" destination="Rss-0R-b3g" id="9iU-NI-2U2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fY3-Hg-L4t">
+                    <connections>
+                        <action selector="goRepositoryOwnerWebsite:" destination="Rss-0R-b3g" id="JPG-fS-I3c"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="582.60869565217399" y="136.60714285714286"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

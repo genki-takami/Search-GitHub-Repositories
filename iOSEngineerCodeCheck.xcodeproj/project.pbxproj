@@ -26,6 +26,8 @@
 		E08460B527BEA6F600BEED99 /* UIColor+DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460B427BEA6F600BEED99 /* UIColor+DynamicColor.swift */; };
 		E08460B727BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460B627BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift */; };
 		E08460BA27BEDA0C00BEED99 /* RepositoryDetailViewController+SetupText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460B927BEDA0C00BEED99 /* RepositoryDetailViewController+SetupText.swift */; };
+		E08460BC27BEDE8400BEED99 /* RepositoryMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460BB27BEDE8400BEED99 /* RepositoryMoreInfoViewController.swift */; };
+		E08460BE27BEE9B500BEED99 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08460BD27BEE9B500BEED99 /* PresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		E08460B427BEA6F600BEED99 /* UIColor+DynamicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+DynamicColor.swift"; sourceTree = "<group>"; };
 		E08460B627BEC13200BEED99 /* RepositorySearchViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositorySearchViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
 		E08460B927BEDA0C00BEED99 /* RepositoryDetailViewController+SetupText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryDetailViewController+SetupText.swift"; sourceTree = "<group>"; };
+		E08460BB27BEDE8400BEED99 /* RepositoryMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMoreInfoViewController.swift; sourceTree = "<group>"; };
+		E08460BD27BEE9B500BEED99 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		FCE7D5F4DC5E8FC9FAC866AC /* Pods-iOSEngineerCodeCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +190,8 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E2244DC5E80012785A /* RepositorySearchViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
+				E08460BB27BEDE8400BEED99 /* RepositoryMoreInfoViewController.swift */,
+				E08460BD27BEE9B500BEED99 /* PresentationController.swift */,
 				E08460B827BED9CE00BEED99 /* Extension */,
 			);
 			path = Controller;
@@ -498,8 +504,10 @@
 				E084606D27BC3E4100BEED99 /* Repository.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				E084607527BC669600BEED99 /* APIClient.swift in Sources */,
+				E08460BE27BEE9B500BEED99 /* PresentationController.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				E08460BA27BEDA0C00BEED99 /* RepositoryDetailViewController+SetupText.swift in Sources */,
+				E08460BC27BEDE8400BEED99 /* RepositoryMoreInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,6 +58,24 @@ final class RepositoryDetailViewController: UIViewController {
     
     // MARK: - SHOW MORE INFORMATION
     @IBAction private func showMoreInfo(_ sender: Any) {
-        
+        /// 詳細画面にいく
+        let repositoryMoreInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "repositoryMoreInfo") as! RepositoryMoreInfoViewController
+        repositoryMoreInfoVC.modalPresentationStyle = .custom
+        repositoryMoreInfoVC.transitioningDelegate = self
+        repositoryMoreInfoVC.repoSiteURL = repo.htmlUrl
+        repositoryMoreInfoVC.repoOwnerURL = repo.ownerHTML
+        repositoryMoreInfoVC.repoDescription = repo.description
+        repositoryMoreInfoVC.isEnglish = isEnglish
+        present(repositoryMoreInfoVC, animated: true, completion: nil)
+    }
+}
+
+extension RepositoryDetailViewController: UIViewControllerTransitioningDelegate {
+    
+    /// カスタムポップアップViewを返す
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        return PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
