@@ -22,7 +22,6 @@ final class RepositorySearchViewController: UIViewController {
         setUp()
     }
     
-    // MARK: - SET-UP
     private func setUp() {
         
         repoTable.delegate = self
@@ -31,7 +30,7 @@ final class RepositorySearchViewController: UIViewController {
         repoSearchBar.placeholder = "GitHubのリポジトリを検索"
         repoSearchBar.delegate = self
         
-        /// add TapGesture for closing software keyboard
+        /// ソフトウェアキーボードの外をタップしたら、それを閉じる
         let gesture = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         view.addGestureRecognizer(gesture)
     }
@@ -47,6 +46,46 @@ final class RepositorySearchViewController: UIViewController {
             let repositoryDetailVC = segue.destination as! RepositoryDetailViewController
             let index = repoTable.indexPathForSelectedRow!.row
             repositoryDetailVC.repo = repo[index]
+        }
+    }
+}
+
+extension RepositorySearchViewController: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        /// 入力する際にテキストとリポジトリの配列を空にする
+        repoSearchBar.text = ""
+        repo.removeAll()
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+                
+        guard let word = repoSearchBar.text else { return }
+        
+        if word.isEmpty {
+            Modal.showError("文字が入力されていません！")
+        } else {
+            
+            Modal.showModal()
+            
+            APIClient.fetchRepositories(word) { result in
+                
+                DispatchQueue.main.async {
+                    Modal.dismissModal()
+                }
+                
+                switch result {
+                case .success(let repos):
+                    self.repo = repos
+                    
+                    DispatchQueue.main.async {
+                        self.repoTable.reloadData()
+                    }
+                case .failure(let error):
+                    Modal.showError(error.localizedDescription)
+                }
+            }
         }
     }
 }
