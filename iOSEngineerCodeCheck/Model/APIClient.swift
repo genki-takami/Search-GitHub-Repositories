@@ -42,7 +42,9 @@ final class APIClient {
                 return
             }
             do {
-                let repositries = try JSONDecoder().decode(Repositories.self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let repositries: Repositories = try decoder.decode(Repositories.self, from: data)
                 handler(.success(repositries.items))
             } catch {
                 handler(.failure(APIError.unknown))
