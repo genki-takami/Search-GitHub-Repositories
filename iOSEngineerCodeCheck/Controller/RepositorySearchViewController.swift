@@ -74,16 +74,18 @@ extension RepositorySearchViewController: UISearchBarDelegate {
             
             APIClient.fetchRepositories(word) { result in
                 
-                DispatchQueue.main.async {
-                    Modal.dismissModal()
-                }
-                
                 switch result {
                 case .success(let repos):
-                    self.repo = repos
-                    
-                    DispatchQueue.main.async {
-                        self.repoTable.reloadData()
+                    /// 検索に引っ掛からなかったら、その旨を伝える
+                    if repos.isEmpty {
+                        Modal.showError("「\(word)」を含むリポジトリは見つかりませんでした！")
+                    } else {
+                        self.repo = repos
+                        /// モーダルを終了してtableViewを更新
+                        DispatchQueue.main.async {
+                            Modal.dismissModal()
+                            self.repoTable.reloadData()
+                        }
                     }
                 case .failure(let error):
                     Modal.showError(error.localizedDescription)
