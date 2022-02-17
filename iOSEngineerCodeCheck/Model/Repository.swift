@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
+/// デコードされたJSONを形成する構造体
 struct Repositories: Codable {
     let items: [Repository]
 }
 
+/// 個別のリポジトリデータ
 struct Repository: Codable {
     let fullName: String
     let language: String?
@@ -28,6 +30,7 @@ struct Repository: Codable {
     }
 }
 
+/// アバター画像があるリポジトリのオーナーデータ(JSONでネストされていた)
 struct Owner: Codable {
     let avatarUrl: String
 }
