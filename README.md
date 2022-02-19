@@ -50,7 +50,6 @@ UITests：検索した後のView挙動や新UI機能のテスト
 ```
 
 ### 参考サイト
-```
 Alamofireについて
 [【Swift】AlamofireでAPI通信をする](https://qiita.com/REON/items/094d1b8bc7e59ea44a34)
 [【Swift】「Alamofire」ライブラリを使ってみる](https://yamamtoblog.com/alamofire/)
@@ -72,7 +71,6 @@ XCTestについて
 [iOS XCTestで非同期処理の完了を待つ](https://hopita.hatenablog.com/entry/2018/08/30/233409)
 ダークモードについて
 [iOS 13からのダークモード対応のコツ](https://qiita.com/gonsee/items/c04b73787730c0e831df)
-```
 
 ### 復習コンテンツ
 ```
