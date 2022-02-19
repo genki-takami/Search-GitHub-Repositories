@@ -50,27 +50,27 @@ UITests：検索した後のView挙動や新UI機能のテスト
 ```
 
 ### 参考サイト
-Alamofireについて
-[【Swift】AlamofireでAPI通信をする](https://qiita.com/REON/items/094d1b8bc7e59ea44a34)
-[【Swift】「Alamofire」ライブラリを使ってみる](https://yamamtoblog.com/alamofire/)
-[【Swift】Alamofireを使ってHTTP通信を実装してみた](https://dasuko.hatenadiary.jp/entry/2021/07/16/220812)
-[Problems with Alamofire response handler](https://stackoverflow.com/questions/68503188/problems-with-alamofire-response-handler)
-GitHub API について
-[[Swift]async/awaitを使ってGitHubAPIを叩く（UIKit版）](https://qiita.com/nkekisasa222/items/bdc9947a3a7b1fb126ac)
-[GithubAPIでリポジトリをカスタムセルで、一覧表示させてみた](https://qiita.com/SHOBLOG/items/5083e43558581cbf0dee)
-ルール・原則について
-[Swiftのメモリリークについてまとめてみた](https://qiita.com/ryu1sazae/items/201275f9ac3af1ec9e64)
-[Swiftコーディング規約](https://github.com/cookpad/styleguide/blob/master/swift.ja.md)
-[クロージャとは](https://swift.codelly.dev/guide/クロージャ/#クロージャ式の定義)
-[あなたはDRY原則を誤認している？](https://qiita.com/yatmsu/items/b4a84c4ae78fd67a364c)
-[コマンド・クエリ分離の原則（CQS）とは](https://www.youtube.com/watch?v=LsFWDrvS5Ms)
-アイデアについて
-[すぐに使える！Swiftリファクタリングアイディア集](https://qiita.com/takehilo/items/89e72192b758942af93e#how-to-move-data-sources-and-delegates-out-of-your-view-controllers)
-XCTestについて
-[XCTest入門 (Swift) ~UITest編~ Part2](https://qiita.com/y-okudera/items/8875177460713bc0ecf3)
-[iOS XCTestで非同期処理の完了を待つ](https://hopita.hatenablog.com/entry/2018/08/30/233409)
-ダークモードについて
-[iOS 13からのダークモード対応のコツ](https://qiita.com/gonsee/items/c04b73787730c0e831df)
+Alamofireについて    
+[【Swift】AlamofireでAPI通信をする](https://qiita.com/REON/items/094d1b8bc7e59ea44a34)    
+[【Swift】「Alamofire」ライブラリを使ってみる](https://yamamtoblog.com/alamofire/)     
+[【Swift】Alamofireを使ってHTTP通信を実装してみた](https://dasuko.hatenadiary.jp/entry/2021/07/16/220812)      
+[Problems with Alamofire response handler](https://stackoverflow.com/questions/68503188/problems-with-alamofire-response-handler)     
+GitHub API について     
+[[Swift]async/awaitを使ってGitHubAPIを叩く（UIKit版）](https://qiita.com/nkekisasa222/items/bdc9947a3a7b1fb126ac)      
+[GithubAPIでリポジトリをカスタムセルで、一覧表示させてみた](https://qiita.com/SHOBLOG/items/5083e43558581cbf0dee)     
+ルール・原則について    
+[Swiftのメモリリークについてまとめてみた](https://qiita.com/ryu1sazae/items/201275f9ac3af1ec9e64)     
+[Swiftコーディング規約](https://github.com/cookpad/styleguide/blob/master/swift.ja.md)     
+[クロージャとは](https://swift.codelly.dev/guide/クロージャ/#クロージャ式の定義)    
+[あなたはDRY原則を誤認している？](https://qiita.com/yatmsu/items/b4a84c4ae78fd67a364c)     
+[コマンド・クエリ分離の原則（CQS）とは](https://www.youtube.com/watch?v=LsFWDrvS5Ms)      
+アイデアについて     
+[すぐに使える！Swiftリファクタリングアイディア集](https://qiita.com/takehilo/items/89e72192b758942af93e#how-to-move-data-sources-and-delegates-out-of-your-view-controllers)     
+XCTestについて     
+[XCTest入門 (Swift) ~UITest編~ Part2](https://qiita.com/y-okudera/items/8875177460713bc0ecf3)      
+[iOS XCTestで非同期処理の完了を待つ](https://hopita.hatenablog.com/entry/2018/08/30/233409)      
+ダークモードについて      
+[iOS 13からのダークモード対応のコツ](https://qiita.com/gonsee/items/c04b73787730c0e831df)    
 
 ### 復習コンテンツ
 ```
