@@ -168,7 +168,7 @@
                                 </connections>
                             </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本語にする" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-z8-CYk">
-                                <rect key="frame" x="20" y="95.5" width="104" height="20.5"/>
+                                <rect key="frame" x="40" y="95.5" width="104" height="20.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
@@ -177,6 +177,22 @@
                                     <outletCollection property="gestureRecognizers" destination="ham-xl-6mH" appends="YES" id="c3a-wb-yAb"/>
                                 </connections>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repeat.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-E2-eiA">
+                                <rect key="frame" x="20" y="96.5" width="20" height="19"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BSF-T7-Ak9"/>
+                                    <constraint firstAttribute="width" constant="20" id="Fzg-Ei-7U9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="l6P-CG-nVT">
+                                <rect key="frame" x="334.5" y="96.5" width="20" height="19"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="WIe-Rh-7Yu"/>
+                                    <constraint firstAttribute="width" constant="20" id="eMe-81-T78"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="srK-fe-i1b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -190,9 +206,13 @@
                             <constraint firstItem="Iim-eb-8Ad" firstAttribute="top" secondItem="RZI-0U-3Jw" secondAttribute="bottom" id="MqB-oP-Wez"/>
                             <constraint firstItem="srK-fe-i1b" firstAttribute="bottom" secondItem="gWL-IH-i3D" secondAttribute="bottom" constant="10" id="VXg-vb-B0h"/>
                             <constraint firstItem="RZI-0U-3Jw" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" id="W0o-dQ-fSa"/>
+                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="top" secondItem="l6P-CG-nVT" secondAttribute="bottom" id="W2k-oe-RV6"/>
+                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="leading" secondItem="5OP-E2-eiA" secondAttribute="leading" id="aYP-Ix-TYA"/>
                             <constraint firstItem="4q1-pG-WSB" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" id="cSe-zR-hlY"/>
-                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="leading" secondItem="BsQ-z8-CYk" secondAttribute="leading" id="fjl-oS-HM8"/>
+                            <constraint firstItem="BsQ-z8-CYk" firstAttribute="leading" secondItem="5OP-E2-eiA" secondAttribute="trailing" id="epT-Ix-E6s"/>
                             <constraint firstItem="4q1-pG-WSB" firstAttribute="leading" secondItem="Iim-eb-8Ad" secondAttribute="leading" id="jHn-8t-9ZF"/>
+                            <constraint firstItem="Iim-eb-8Ad" firstAttribute="top" secondItem="5OP-E2-eiA" secondAttribute="bottom" id="pf9-Oj-tWr"/>
+                            <constraint firstItem="RZI-0U-3Jw" firstAttribute="leading" secondItem="l6P-CG-nVT" secondAttribute="trailing" id="qYt-Zf-z3Z"/>
                             <constraint firstItem="Iim-eb-8Ad" firstAttribute="centerY" secondItem="srK-fe-i1b" secondAttribute="centerY" multiplier="0.75" id="ruB-l0-4VM"/>
                             <constraint firstItem="gWL-IH-i3D" firstAttribute="top" secondItem="4q1-pG-WSB" secondAttribute="bottom" constant="8" id="wp7-ad-n9c"/>
                         </constraints>
@@ -259,16 +279,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-nJ-H09">
+                                <rect key="frame" x="329.5" y="381.5" width="24" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Seh-ur-XAS"/>
+                                    <constraint firstAttribute="width" constant="24" id="oDF-Gc-VJ4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KRq-AS-j4P">
+                                <rect key="frame" x="316" y="435.5" width="24" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="B6k-FL-LB2"/>
+                                    <constraint firstAttribute="height" constant="24" id="Jmb-8a-34K"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IG2-4j-xxN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KRq-AS-j4P" firstAttribute="centerY" secondItem="flA-dg-NSC" secondAttribute="centerY" id="8yr-ew-r01"/>
                             <constraint firstItem="u4R-bH-gZg" firstAttribute="top" secondItem="flA-dg-NSC" secondAttribute="bottom" constant="30" id="EX9-6Y-8Vo"/>
+                            <constraint firstItem="4kZ-nJ-H09" firstAttribute="centerY" secondItem="VPu-AS-OTn" secondAttribute="centerY" id="OU8-pb-ArW"/>
                             <constraint firstItem="flA-dg-NSC" firstAttribute="centerY" secondItem="oY3-R8-5r2" secondAttribute="centerY" id="chb-J5-00z"/>
                             <constraint firstItem="flA-dg-NSC" firstAttribute="centerX" secondItem="oY3-R8-5r2" secondAttribute="centerX" id="eSJ-n5-Wxn"/>
                             <constraint firstItem="VPu-AS-OTn" firstAttribute="centerX" secondItem="oY3-R8-5r2" secondAttribute="centerX" id="ez6-Va-e8V"/>
+                            <constraint firstItem="KRq-AS-j4P" firstAttribute="leading" secondItem="flA-dg-NSC" secondAttribute="trailing" id="f5g-pR-cGL"/>
                             <constraint firstItem="IG2-4j-xxN" firstAttribute="trailing" secondItem="u4R-bH-gZg" secondAttribute="trailing" constant="20" id="mCo-dq-7zF"/>
                             <constraint firstItem="u4R-bH-gZg" firstAttribute="leading" secondItem="IG2-4j-xxN" secondAttribute="leading" constant="20" id="rNd-qP-D4d"/>
+                            <constraint firstItem="4kZ-nJ-H09" firstAttribute="leading" secondItem="VPu-AS-OTn" secondAttribute="trailing" id="uBf-b3-03u"/>
                             <constraint firstItem="flA-dg-NSC" firstAttribute="top" secondItem="VPu-AS-OTn" secondAttribute="bottom" constant="30" id="zff-UY-aJS"/>
                         </constraints>
                     </view>
@@ -295,6 +333,9 @@
     </scenes>
     <resources>
         <image name="github" width="256" height="256"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="link" catalog="system" width="128" height="122"/>
+        <image name="repeat.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
