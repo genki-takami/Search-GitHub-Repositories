@@ -20,6 +20,7 @@ class iOSEngineerCodeCheckTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    /// responseJSON()メソッドの返り値を正常にデコードしているかの表示テスト
     func testAPI_responseJSON() throws {
 
         let expect = expectation(description: "あらもファイアーーーーーー、、、これは成功します！")
@@ -52,8 +53,9 @@ class iOSEngineerCodeCheckTests: XCTestCase {
         }
     }
 
+    /// responseDecodable()メソッドの返り値を正常にデコードしているかの表示テスト
     func testAPI_responseDecodable() throws {
-        // MARK: - 危険！！！！
+        
         let expect = expectation(description: "これは失敗します")
 
         let baseURL = "https://api.github.com/search/repositories?q="
@@ -83,6 +85,7 @@ class iOSEngineerCodeCheckTests: XCTestCase {
         }
     }
 
+    /// URLSessionメソッドの返り値を正常に取得しているかの表示テスト
     func testAPI_URLSession() throws {
 
         let task: URLSessionTask?
@@ -103,6 +106,34 @@ class iOSEngineerCodeCheckTests: XCTestCase {
             if let _ = error {
                 XCTFail("ターーーーーーーーーーイム！！！")
                 task?.cancel()
+            } else {
+                print("完了")
+            }
+        }
+    }
+    
+    /// Modalで表示するエラーメッセージが正しく表示されているか
+    func testErrorMessage() throws {
+        let expect = expectation(description: "絵文字と日本語をテスト")
+        var errorMessage = ""
+        
+        let word = "こんにちは✋"
+
+        APIClient.fetchRepositories(word) { result in
+            switch result {
+            case .success(_):
+                errorMessage = "成功"
+            case .failure(let error):
+                errorMessage = String(describing: error)
+            }
+            
+            expect.fulfill()
+            XCTAssertEqual(errorMessage, "リポジトリが存在しません！")
+        }
+        
+        waitForExpectations(timeout: 5) { error in
+            if let _ = error {
+                XCTFail("ターーーーーーーーーーイム！！！")
             } else {
                 print("完了")
             }

@@ -85,7 +85,7 @@ extension RepositorySearchViewController: UISearchBarDelegate {
                         self.repoTable.reloadData()
                     }
                 case .failure(let error):
-                    Modal.showError(error.localizedDescription)
+                    Modal.showError(String(describing: error))
                 }
             }
         }
